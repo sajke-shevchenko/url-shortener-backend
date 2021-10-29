@@ -68,6 +68,6 @@ class UrlService
      */
     public function getUrlByShort(string $short): Url
     {
-        return Url::query()->firstWhere(Url::SHORT, '=', $short);
+        return Url::query()->where(Url::SHORT, '=', $short)->firstOrFail();
     }
 }
