@@ -25,7 +25,8 @@ class UrlService
      */
     public function all(PaginationData $paginationData): LengthAwarePaginator
     {
-        return Url::query()->paginate($paginationData->per_page, ['*'], 'page', $paginationData->page);
+        return Url::query()->orderByDesc(Url::CREATED_AT)
+            ->paginate($paginationData->per_page, ['*'], 'page', $paginationData->page);
     }
 
     /**
