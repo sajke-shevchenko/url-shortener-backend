@@ -19,6 +19,7 @@ use Illuminate\Support\Env;
  */
 class Url extends Model
 {
+    public const ID = 'id';
     public const TARGET = 'target';
     public const SHORT = 'short';
     public const COMMERCIAL = 'commercial';
