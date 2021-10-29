@@ -18,6 +18,7 @@ class UrlResource extends JsonResource
     public function toArray($request): array
     {
         return [
+            Url::ID => $this->id,
             Url::SHORT => $this->getShortUrl(),
             Url::TARGET => $this->target,
             Url::CREATED_AT => $this->created_at,
