@@ -22,9 +22,9 @@ class BaseCollection extends JsonResource
     public function toArray($request): array
     {
         return [
-            'paginator' => [
-                'current_page' => $this->currentPage(),
-                'last_page' => $this->lastPage(),
+            'pagination' => [
+                'page' => $this->currentPage(),
+                'total_pages' => $this->lastPage(),
                 'per_page' => $this->perPage(),
                 'total' => $this->total(),
             ],
