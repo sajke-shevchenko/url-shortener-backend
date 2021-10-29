@@ -20,7 +20,7 @@ class UrlRequest extends FormRequest
     {
         return [
             Url::TARGET => ['required', 'string', 'max:255'],
-            Url::SHORT => ['string', 'max:255', 'unique:urls'],
+            Url::SHORT => ['string', 'max:255', 'unique:urls', 'nullable'],
             Url::COMMERCIAL => ['required', 'boolean'],
             Url::EXPIRED_AT => ['required', 'date', 'after:now'],
         ];
