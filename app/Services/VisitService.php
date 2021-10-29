@@ -35,7 +35,8 @@ class VisitService
 
         if ($url->commercial) {
             $images = Storage::disk('images')->allFiles();
-            $visit->image_url = $images[array_rand($images)];
+            $imagePath = $images[array_rand($images)];
+            $visit->image_url = public_path()."/images/".$imagePath;
         }
 
         $visit->save();
